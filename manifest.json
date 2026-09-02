@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ybas - YouTube Auto Swipe",
   "short_name": "ybas",
-  "version": "2.0.0",
+  "version": "0.2.0",
   "description": "YouTube Shortsの再生が終わったら自動で次の動画へスワイプします。",
   "permissions": ["storage"],
   "action": {
