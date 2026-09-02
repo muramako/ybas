@@ -9,6 +9,7 @@ Windows・Mac のどちらでも、Chrome / Brave 上で動作します。
 - 手動でスワイプ / クリックする手間を省き、Shorts を連続再生
 - Windows / Mac のどちらの OS でも同じ挙動
 - Chrome、Brave など Chromium ベースのブラウザに対応
+- ツールバーのアイコンからワンクリックでON/OFF切り替え可能
 
 ## 対応ブラウザ
 
@@ -33,6 +34,10 @@ Windows・Mac のどちらでも、Chrome / Brave 上で動作します。
 1. 拡張機能を有効化した状態で YouTube Shorts ([https://www.youtube.com/shorts](https://www.youtube.com/shorts)) を開く
 2. 動画を再生する
 3. 再生が終わると自動的に次のショート動画へ切り替わる
+
+### ON/OFFの切り替え
+
+ブラウザのツールバー(URLバーの横)にある ybas のアイコンをクリックすると、自動スワイプのON/OFFを切り替えられます。切り替えは即座に反映され、ページの再読み込みは不要です。
 
 ## ライセンス
 

@@ -6,9 +6,22 @@
 
   log("content script loaded on", location.href);
 
+  let enabled = true;
   let currentVideo = null;
   let triggeredForSrc = null;
   let lastTriggerAt = 0;
+
+  chrome.storage.local.get({ enabled: true }, (result) => {
+    enabled = result.enabled;
+    log("enabled =", enabled);
+  });
+
+  chrome.storage.onChanged.addListener((changes, area) => {
+    if (area === "local" && "enabled" in changes) {
+      enabled = changes.enabled.newValue;
+      log("enabled changed ->", enabled);
+    }
+  });
 
   const getActiveVideo = () => document.querySelector("#shorts-player video");
 
@@ -34,6 +47,7 @@
   // Shorts の <video> は loop=true で再生されるため 'ended' イベントは発火しない。
   // 終端到達を timeupdate で監視し、ループする直前に次の動画へ送る。
   const onTimeUpdate = (event) => {
+    if (!enabled) return;
     const video = event.target;
     const { duration, currentTime, currentSrc } = video;
     if (!duration || Number.isNaN(duration) || duration < MIN_DURATION_SECONDS) {
